@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="barra">
+    <ion-title>PERFIL</ion-title>
+    <ion-back-button (click)="back()" defaultHref="login"  slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding fondo"><br>
+  <ion-item class="input border" lines="none">
+    <ion-input label="Nombre : {{nombre}}" readonly></ion-input>
+  </ion-item>
+  <ion-item class="input border" lines="none">
+    <ion-input  label="Email : {{correo}}" readonly></ion-input>
+  </ion-item>
+  <ion-item class="input" lines="none">
+    <ion-input [(ngModel)]="mdl_career" label="Carrera : "></ion-input>
+  </ion-item>
+  <ion-item class="input" lines="none">
+    <ion-input [(ngModel)]="mdl_pass" type="password" label="Contraseña :"></ion-input>
+  </ion-item>
+  <ion-item class="input" lines="none">
+    <ion-input [(ngModel)]="mdl_confpass" type="password" label="Confirmar Contraseña :"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block" (click)="cambiar()" shape="round" class="boton btn">
+    <ion-spinner name="circles" class="ion-margin-end" *ngIf="loadingVisible"></ion-spinner>Actualizar</ion-button>
+
+  <br>
+  <ion-item class="item-warning" lines="none" *ngIf="warningVisible">{{message}} </ion-item>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="barra">
+    <ion-back-button (click)="back()" defaultHref="login"  slot="start"></ion-back-button>
+    <ion-title>Asistencias: </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="perfil()" ><ion-icon slot="icon-only" name="person-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"  class="fondo">
+  <div class="img-container titulo"><h3>Asignaturas:</h3></div>  
+
+  <ion-card *ngFor="let x of asistencias">
+    <ion-card-header>
+      <ion-card-title> {{ x.nombre }} </ion-card-title>
+      <ion-label>Sigla: {{ x.sigla }} </ion-label>
+      <ion-label>Presente: {{ x.presente }} </ion-label>
+      <ion-label>Ausente: {{ x.ausente }} </ion-label>
+      <ion-label>Porcentaje asistencia: {{ x.porcentaje }}%</ion-label>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>
